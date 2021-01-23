@@ -1,0 +1,27 @@
+.arrow {
+	position: absolute;
+	top: 50%;
+	font-size: 50px;
+}
+
+.arrow:hover {
+	cursor: pointer;
+}
+
+.disbale {
+	opacity: .5;
+}
+
+.disable:hover {
+	cursor: not-allowed;
+}
+
+.arrow-left {
+	left: 0;
+	transform: rotate(180deg) translateY(90%);
+}
+
+.arrow-right {
+	right: 0;
+	transform: translateY(-90%);
+}

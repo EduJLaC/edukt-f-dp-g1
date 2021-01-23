@@ -1,0 +1,10 @@
+.quiz input[type='text'] {
+	border: 0;
+	border-bottom: 1px solid #AAAABD; 
+	outline: 0;
+}
+
+.quiz p span {
+	color: #212529;
+}
+

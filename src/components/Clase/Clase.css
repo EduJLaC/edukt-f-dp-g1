@@ -1,0 +1,42 @@
+.clase {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	height: 80vh;
+	text-align: center;
+	position: relative;
+}
+
+.infoContainer {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.congrats-container {
+	margin: auto auto;
+	transform: translateY(-15%);
+}
+
+.container-img {
+	height: 70%;
+}
+
+img	{
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.texto {
+	font-family: 'Rubik', sans-serif;
+	font-size: 22px;
+}
+
+.congrats {
+	font-size: 32px;
+}
+
+.next {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}

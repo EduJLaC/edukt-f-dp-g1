@@ -1,0 +1,8 @@
+span {
+	color: #aaa;
+}
+
+.comment-box {
+	height: 300px;
+	overflow: auto;
+}

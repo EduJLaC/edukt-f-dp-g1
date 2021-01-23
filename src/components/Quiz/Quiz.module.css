@@ -1,0 +1,77 @@
+.quiz {
+	background-color: #ffffff;
+	width: 550px;
+	border: 1px solid #007BFF;
+	box-shadow: 0 2px 2px 0 #ccc;
+  min-height: 200px;
+  height: min-content;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz .score-section {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+}
+
+.quiz .question-section {
+  width: 100%;
+  position: relative;
+}
+
+.quiz .question-count {
+  margin-bottom: 20px;
+}
+
+.quiz .question-count span {
+  font-size: 28px;
+}
+
+.quiz .question-text {
+  margin-bottom: 12px;
+}
+
+.quiz .answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quiz button {
+	color: #2F52E0;
+	border-color: #2F52E0;
+}
+
+.quiz button:not(:last-of-type) {
+	margin-bottom: .2rem;
+}
+
+.quiz button:hover,
+.quiz button:active,
+.quiz button:focus {
+	background-color: #2F52E0 !important;
+	box-shadow: unset !important;
+}
+
+.quiz .scoreContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.quiz .textoScore {
+  color: #2F52E0;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.quiz .scoreContainer button {
+  color: #fff;
+}
