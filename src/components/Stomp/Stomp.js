@@ -55,7 +55,7 @@ const Stomp = () => {
 				updateUsers(from);
 			});
 
-			subscriptionMensajes = client.subscribe(`/user/${from}/message`, (message) =>{
+			subscriptionMensajes = client.subscribe(`/user/${from}/message`, (message) => {
 				updatedMensajes.push(JSON.parse(message.body))
 				setMensajes([...updatedMensajes]);
 			});
@@ -77,14 +77,14 @@ const Stomp = () => {
 			throw new Error(message);
 		}
 		const data = await res.json();
-		if(!data.find(d => d === recipient)){
+		if (!data.find(d => d === recipient)) {
 			setRecipient('');
 		}
 		setUsuariosActivos(data);
 	}
 
 	const disconnect = async () => {
-		const res = await fetch('https://pp-edukt-back.herokuapp.com/edukt/rest/user-disconnect', {
+		/*const res = await fetch('https://pp-edukt-back.herokuapp.com/edukt/rest/user-disconnect', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -94,13 +94,26 @@ const Stomp = () => {
 		if (!res.ok) {
 			const message = `An error has occured: ${res.status}`;
 			throw new Error(message);
-		}
+		}*/
 
 		client.onDisconnect = frame => {
 			subscriptionUsers.unsubscribe();
 			subscriptionMensajes.unsubscribe();
+
+			const res = await fetch('https://pp-edukt-back.herokuapp.com/edukt/rest/user-disconnect', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ username: from })
+			});
+			if (!res.ok) {
+				const message = `An error has occured: ${res.status}`;
+				throw new Error(message);
+			}
+
 		}
-		
+
 		client.onWebSocketClose = frame => {
 			setUsuariosActivos([]);
 			setRecipient('');
