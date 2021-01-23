@@ -38,7 +38,7 @@ const Stomp = () => {
 		}
 
 		client = new Client({
-			brokerURL: 'ws://pp-edukt-back.herokuapp.com/edukt/chat',
+			brokerURL: 'wss://pp-edukt-back.herokuapp.com/edukt/chat',
 			debug: (str) => {
 				console.log(str);
 			},
