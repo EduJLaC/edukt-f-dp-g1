@@ -96,7 +96,7 @@ const Stomp = () => {
 			throw new Error(message);
 		}*/
 
-		client.onDisconnect = frame => {
+		client.onDisconnect = async frame => {
 			subscriptionUsers.unsubscribe();
 			subscriptionMensajes.unsubscribe();
 
