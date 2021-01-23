@@ -21,7 +21,7 @@ const Quiz = () => {
   useEffect(() => {
     if (currentQuestion === 0) {
       const getQuestions = async () => {
-        const response = await fetch('http://localhost:8080/edukt/quizzes/60033bbbc05e9c5717e1cdd3');
+        const response = await fetch('https://pp-edukt-back.herokuapp.com/edukt/quizzes/60033bbbc05e9c5717e1cdd3');
 
         if (!response.ok) {
           const message = `An error has occured: ${response.status}`;
@@ -37,7 +37,7 @@ const Quiz = () => {
       getQuestions();
     } else if (currentQuestion === 2) {
       const validar = async () => {
-        const response = await fetch('http://localhost:8080/edukt/quizzes/revisar', {
+        const response = await fetch('https://pp-edukt-back.herokuapp.com/edukt/quizzes/revisar', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

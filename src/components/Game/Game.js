@@ -10,7 +10,7 @@ const Game = ({ history, match }) => {
 
   useEffect(() => {
     const getContent = async () => {
-      const response = await fetch(`http://localhost:8080/edukt/gamesCTA1G/?temaId=60031417eadee971f6ffd2ad&level=${level}`);
+      const response = await fetch(`https://pp-edukt-back.herokuapp.com/edukt/gamesCTA1G/?temaId=60031417eadee971f6ffd2ad&level=${level}`);
 
       if (!response.ok) {
         const message = `An error has occured: ${response.status}`;
@@ -48,7 +48,7 @@ const Game = ({ history, match }) => {
     }
 
     fetch(
-      'http://localhost:8080/edukt/gamesCTA1G/validar/?temaId=60031417eadee971f6ffd2ad',
+      'https://pp-edukt-back.herokuapp.com/edukt/gamesCTA1G/validar/?temaId=60031417eadee971f6ffd2ad',
       {
         method: 'POST',
         headers: {

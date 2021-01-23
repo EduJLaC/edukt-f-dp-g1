@@ -20,7 +20,7 @@ const Foro = ({ history }) => {
 	}, []);
 
 	const getQuestions = () => {
-		fetch('http://localhost:8080/edukt/foro/publicaciones')
+		fetch('https://pp-edukt-back.herokuapp.com/edukt/foro/publicaciones')
 			.then((res) => res.json())
 			.then((respuesta) => {
 				const { data } = respuesta;
@@ -38,7 +38,7 @@ const Foro = ({ history }) => {
 
 		const data = { ...info };
 
-		fetch('http://localhost:8080/edukt/publicaciones', {
+		fetch('https://pp-edukt-back.herokuapp.com/edukt/publicaciones', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

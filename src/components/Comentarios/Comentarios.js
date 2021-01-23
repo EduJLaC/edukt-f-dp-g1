@@ -14,7 +14,7 @@ const Comentarios = ({ location, history }) => {
 	}, [history, location.info]);
 
 	const getComentarios = () => {
-		fetch(`http://localhost:8080/edukt/foro/publicaciones/${info.id}`)
+		fetch(`https://pp-edukt-back.herokuapp.com/edukt/foro/publicaciones/${info.id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				const { comentarios } = data.data;

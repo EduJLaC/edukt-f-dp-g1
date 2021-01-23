@@ -23,7 +23,7 @@ const Stomp = () => {
 	}, [])
 
 	const connect = async () => {
-		const res = await fetch('http://localhost:8080/edukt/rest/user-connect', {
+		const res = await fetch('https://pp-edukt-back.herokuapp.com/edukt/rest/user-connect', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const Stomp = () => {
 		}
 
 		client = new Client({
-			brokerURL: 'ws://localhost:8080/edukt/chat',
+			brokerURL: 'ws://pp-edukt-back.herokuapp.com/edukt/chat',
 			debug: (str) => {
 				console.log(str);
 			},
@@ -71,7 +71,7 @@ const Stomp = () => {
 
 	const updateUsers = async (userName) => {
 		// setUsuariosActivos([]);
-		const res = await fetch(`http://localhost:8080/edukt/rest/active-users-except/${userName}`);
+		const res = await fetch(`https://pp-edukt-back.herokuapp.com/edukt/rest/active-users-except/${userName}`);
 		if (!res.ok) {
 			const message = `An error has occured: ${res.status}`;
 			throw new Error(message);
@@ -84,7 +84,7 @@ const Stomp = () => {
 	}
 
 	const disconnect = async () => {
-		const res = await fetch('http://localhost:8080/edukt/rest/user-disconnect', {
+		const res = await fetch('https://pp-edukt-back.herokuapp.com/edukt/rest/user-disconnect', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

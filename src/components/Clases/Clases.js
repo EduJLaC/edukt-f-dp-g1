@@ -5,7 +5,7 @@ const Clases = () => {
 	const [temas, setTemas] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:8080/edukt/CTA1G')
+		fetch('https://pp-edukt-back.herokuapp.com/edukt/CTA1G')
 			.then((res) => res.json())
 			.then((data) => {
 				const { temaCTAPrimerGradoes } = data._embedded;
