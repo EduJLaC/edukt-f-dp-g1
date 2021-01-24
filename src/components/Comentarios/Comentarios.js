@@ -36,7 +36,7 @@ const Comentarios = ({ location, history }) => {
 			tipo: 'com',
 		};
 
-		fetch(`http://localhost:8080/edukt/foro/${info.id}/comentarios`, {
+		fetch(`https://pp-edukt-back.herokuapp.com/edukt/foro/${info.id}/comentarios`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
