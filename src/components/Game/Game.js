@@ -20,8 +20,6 @@ const Game = ({ history, match }) => {
 
       const { contents } = await response.json();
 
-      console.log(contents);
-
       setContenidos(contents);
     }
 
@@ -134,7 +132,7 @@ const Game = ({ history, match }) => {
               {
                 contenidos.map(contenido => {
                   return (
-                    <>
+                    <div key={contenido.description}>
                       <h3>Oración</h3>
 
 
@@ -153,7 +151,7 @@ const Game = ({ history, match }) => {
                           })
                         }
                       </div>
-                    </>
+                    </div>
                   )
                 })
               }

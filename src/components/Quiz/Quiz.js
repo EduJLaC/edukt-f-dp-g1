@@ -35,7 +35,7 @@ const Quiz = () => {
       }
 
       getQuestions();
-    } else if (currentQuestion === 2) {
+    } else if (currentQuestion === questions.length) {
       const validar = async () => {
         const response = await fetch('https://pp-edukt-back.herokuapp.com/edukt/quizzes/revisar', {
           method: 'POST',
@@ -66,7 +66,7 @@ const Quiz = () => {
     }
   }, [currentQuestion, formato]);
 
-  const handleNextQuestion = (e, filtro) => {
+  const handleNextQuestion = (filtro) => {
     const { enunciado, alternativas } = questions[currentQuestion];
 
     const alternativasUpdated = [];
@@ -127,7 +127,7 @@ const Quiz = () => {
                     <button
                       className='btn btn-outline-primary d-block w-100'
                       key={descripcion}
-                      onClick={(e) => handleNextQuestion(e, descripcion)}
+                      onClick={() => handleNextQuestion(descripcion)}
                       value={correcta}
                     >
                       {descripcion}

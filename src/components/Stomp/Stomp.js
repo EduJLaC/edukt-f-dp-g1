@@ -51,7 +51,6 @@ const Stomp = () => {
 			updateUsers(from);
 
 			subscriptionUsers = client.subscribe('/topic/active', () => {
-				// console.log(username);
 				updateUsers(from);
 			});
 
